@@ -3,14 +3,12 @@ import React, { useState } from "react";
 function RecipeCreate( {onRecipeCreate }) {
   const [formData, setFormData] = useState({
     name: "", 
-    cuisine: "", 
-    photo: "", 
-    ingredients: "", 
-    preparation: ""
+    shop: "", 
+    location: "", 
+    rating: "", 
+    notes: ""
   });
-  // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
-  // TODO: Add the required input and textarea form elements.
-  // TODO: Add the required submit and change handlers.
+
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value });
   };
@@ -21,17 +19,17 @@ function RecipeCreate( {onRecipeCreate }) {
     console.log(formData);
     setFormData({   
       name: "", 
-      cuisine: "", 
-      photo: "", 
-      ingredients: "", 
-      preparation: ""
+      shop: "", 
+      location: "", 
+      rating: "", 
+      notes: ""
       })
     }
 
 
   return (
     <form name="create" onSubmit={handleSubmit}>
-      <table className="recipe-create">
+      <table className="review-create">
         <tbody>
           <tr>
             <td>
@@ -40,54 +38,60 @@ function RecipeCreate( {onRecipeCreate }) {
                 value={formData.name}
                 id="name"
                 name="name"
-                placeholder="Name"
+                placeholder="Bean Name"
                 onChange={handleChange}
-                required={true}
-                rows={1} />
+                required={true}/>
             </td>
             <td>
-              <label htmlFor="cuisine"></label>
+              <label htmlFor="shop"></label>
               <input
-                value={formData.cuisine}
-                id="cuisine"
-                name="cuisine"
-                placeholder="Cuisine"
+                value={formData.shop}
+                id="shop"
+                name="shop"
+                placeholder="Shop"
                 onChange={handleChange}
-                required={true}
-                rows={1} />
+                required={true}/>
             </td>
             <td>
-              <label htmlFor="photo"></label>
+              <label htmlFor="origin"></label>
+              <select
+                value={formData.origin}
+                id="origin"
+                name="origin"
+                onChange={handleChange}
+                required={true}>
+                <option value="">Select an Origin</option>
+                <option value="Columbia">Columbia</option>
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="Indonesia">Indonesia</option>
+                </select>
+            </td>
+            <td>
+              <label htmlFor="rating"></label>
+              <select
+                value={formData.rating}
+                id="rating"
+                name="rating"
+                placeholder="Rating"
+                onChange={handleChange}
+                required={true}>
+                  <option value="">Select a rating</option>
+                  <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+                  <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                  <option value="⭐⭐⭐">⭐⭐⭐</option>
+                  <option value="⭐⭐">⭐⭐</option>
+                  <option value="⭐">⭐</option>
+                </select>
+            </td>
+            <td>
+              <label htmlFor="notes"></label>
               <input
-                value={formData.photo}
-                id="photo"
-                name="photo"
-                placeholder="URL"
-                type="url"
-                onChange={handleChange}
-                required={true} />
-            </td>
-            <td>
-              <label htmlFor="ingredients"></label>
-              <textarea
-                value={formData.ingredients}
-                id="ingredients"
-                name="ingredients"
-                placeholder="Ingredients"
-                onChange={handleChange}
-                required={true}
-                rows={3} />
-            </td>
-            <td>
-              <label htmlFor="preparation"></label>
-              <textarea
-                value={formData.preparation}
-                id="preparation"
-                name="preparation"
-                placeholder="Preparation"
-                onChange={handleChange}
-                required={true}
-                rows={3} />
+                value={formData.notes}
+                id="notes"
+                name="notes"
+                placeholder="Notes"
+                onChange={handleChange}/>
             </td>
             <td>
               <button type="submit">Create</button>

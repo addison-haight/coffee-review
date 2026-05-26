@@ -1,13 +1,13 @@
 import React from "react";
 
-function Recipe({ name, cuisine, photo, ingredients, preparation, onRecipeDelete }) {
+function Recipe({ name, shop, origin, rating, notes, onRecipeDelete }) {
   return (
     <tr>
       <td>{name}</td>
-      <td>{cuisine}</td>
-      <td><img src={photo} alt={name} /></td>
-      <td className="content_td">{ingredients}</td> 
-      <td className="content-td">{preparation}</td>
+      <td>{shop}</td>
+      <td>{origin}</td>
+      <td className="content_td">{rating}</td> 
+      <td className="content-td">{notes}</td>
       <td><button name="delete" onClick={onRecipeDelete}>Delete</button></td>
     </tr>
   );
@@ -26,11 +26,11 @@ function RecipeList({ recipes = [], onRecipeDelete }) {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Cuisine</th>
-            <th>Photo</th>
-            <th>Ingredients</th>
-            <th>Preparation</th>
+            <th>Bean Name</th>
+            <th>Shop</th>
+            <th>Origin</th>
+            <th>Rating</th>
+            <th>Notes</th>
             <th>Actions</th>
           </tr>
         </thead>
