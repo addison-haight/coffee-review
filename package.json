@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://addison-haight.github.io/recipe-app",
+  "homepage": "https://addison-haight.github.io/coffee-review",
   "main": "src/index.js",
   "sandpackVersion": "0.10.11",
   "dependencies": {
