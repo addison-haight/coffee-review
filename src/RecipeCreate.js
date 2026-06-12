@@ -4,7 +4,7 @@ function RecipeCreate( {onRecipeCreate }) {
   const [formData, setFormData] = useState({
     name: "", 
     shop: "", 
-    location: "", 
+    origin: "", 
     rating: "", 
     notes: ""
   });
@@ -20,7 +20,7 @@ function RecipeCreate( {onRecipeCreate }) {
     setFormData({   
       name: "", 
       shop: "", 
-      location: "", 
+      origin: "", 
       rating: "", 
       notes: ""
       })
@@ -58,6 +58,7 @@ function RecipeCreate( {onRecipeCreate }) {
                 value={formData.origin}
                 id="origin"
                 name="origin"
+                placeholder="Origin"
                 onChange={handleChange}
                 required={true}>
                 <option value="">Select an Origin</option>

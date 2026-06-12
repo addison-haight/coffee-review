@@ -11,8 +11,8 @@ label {
 
 header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  background-color: rgba(186, 7, 7, 0.886);
-  margin: -1rem -1rem 1rem -1rem;
+  background-color: black;
+  margin: 1rem 1rem 1rem 1rem;
   padding: 1em;
 }
 
@@ -20,6 +20,7 @@ h1 {
   font-family: Playfair Display SC;
   font-size: 64px;
   text-align: center;
+  color: lightgray;
 }
 
 /* typography */
@@ -33,7 +34,7 @@ thead th, tfoot th {
 }
 
 body {
-  background-color: #fffde7;
+  background-color: #000000;
 }
 
 th {
@@ -54,7 +55,11 @@ td {
 }
 
 tr:nth-child(odd) {
-  background-color: #fff0c7;
+  background-color: rgb(157, 157, 157);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(223, 223, 223);
 }
 
 
